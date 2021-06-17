@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import {
   Container,
@@ -41,6 +41,8 @@ const Food = [
 ]
 
 const MessageScreen = ({ navigation }: StackScreenProps<any>) => {
+  const [foodActive, setFoodActive] = useState('')
+
   return (
     <Container>
       <Header>
@@ -52,7 +54,12 @@ const MessageScreen = ({ navigation }: StackScreenProps<any>) => {
         <Label>Escolha uma refeição abaixo</Label>
         <PickFoodScroll>
           {Food.map((data) => (
-            <FoodItem key={data.name}>
+            <FoodItem
+              active={foodActive === data.name}
+              onPress={() => setFoodActive(data.name)}
+              key={data.name}
+              activeOpacity={0.4}
+            >
               <FoodImage source={data.image} />
             </FoodItem>
           ))}
@@ -60,7 +67,12 @@ const MessageScreen = ({ navigation }: StackScreenProps<any>) => {
         <Label>E-mail</Label>
         <Input placeholder="Digite o e-mail dele ou dela" />
         <Label>Surpreenda</Label>
-        <Input placeholder="Solte o verbo para seu/sua amado(a)" />
+        <Input
+          multiline
+          numberOfLines={4}
+          textAlignVertical="top"
+          placeholder="Solte o verbo para seu/sua amado(a)"
+        />
         <WrapButton>
           <Button onPress={() => navigation.navigate('Done')}>
             Enviar correio

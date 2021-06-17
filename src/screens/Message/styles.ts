@@ -1,6 +1,14 @@
 import styled from 'styled-components/native'
 import theme from '../../constants/theme'
 
+interface IFoodItem {
+  active: boolean
+}
+
+interface IInput {
+  textArea?: boolean
+}
+
 export const Container = styled.ScrollView`
   flex: 1;
   background: #fff;
@@ -22,12 +30,11 @@ export const HeaderText = styled.Text`
   margin-bottom: 20px;
   margin: 0 6%;
 `
-export const Input = styled.TextInput`
+export const Input = styled.TextInput<IInput>`
   width: 88%;
-  height: 50px;
   background: #fff;
   border: 2px solid ${theme.primary.dark};
-  padding: 0 15px;
+  padding: 10px 15px;
   font-family: 'PoppinsSemiBold';
   border-radius: 10px;
   font-size: 15px;
@@ -75,11 +82,12 @@ export const PickFoodScroll = styled.ScrollView.attrs(() => ({
   height: 100px;
 `
 
-export const FoodItem = styled.TouchableOpacity`
+export const FoodItem = styled.TouchableOpacity<IFoodItem>`
   background: #ececec;
   border-radius: 9px;
-  width: 100px;
-  height: 100px;
+  width: 98px;
+  height: 98px;
+  border: 2px solid ${({ active }) => (active ? theme.primary.dark : '#ececec')};
   display: flex;
   justify-content: center;
   align-items: center;
