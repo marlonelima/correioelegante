@@ -9,9 +9,11 @@ import {
   SecondaryText
 } from './styles'
 
-import Button from './../../components/Button'
+import Button from '../../components/Button'
 
-const HomeScreen = () => {
+import { StackScreenProps } from '@react-navigation/stack'
+
+const WelcomeScreen = ({ navigation }: StackScreenProps<any>) => {
   return (
     <Container>
       <Header>
@@ -20,10 +22,10 @@ const HomeScreen = () => {
       <Welcome>
         <MainText>Surpreenda seu amor</MainText>
         <SecondaryText>Envie mensagens e presentes incríveis</SecondaryText>
-        <Button>Começar</Button>
+        <Button onPress={() => navigation.navigate('Message')}>Começar</Button>
       </Welcome>
     </Container>
   )
 }
 
-export default HomeScreen
+export default WelcomeScreen

@@ -2,11 +2,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { useFonts } from 'expo-font'
 
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-
-import HomeScreen from './src/screens/Home'
-const Stack = createStackNavigator()
+import Navigation from './src/navigation'
 
 export default function App() {
   const [loaded] = useFonts({
@@ -23,11 +19,7 @@ export default function App() {
   return (
     <>
       <StatusBar translucent={false} />
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Navigation />
     </>
   )
 }

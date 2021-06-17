@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Container } from './styles'
 
-const Message = () => {
-    return <Container></Container>
+const DoneScreen = () => {
+  return <Container></Container>
 }
 
-export default Message
+export default DoneScreen

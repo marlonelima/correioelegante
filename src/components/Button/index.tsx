@@ -2,10 +2,15 @@ import React from 'react'
 
 import { Container, Text } from './styles'
 
-const Button: React.FC = ({ children }) => {
+interface IProps {
+  children: string
+  onPress: any
+}
+
+const Button = (props: IProps) => {
   return (
-    <Container>
-      <Text>{children}</Text>
+    <Container onPress={props.onPress}>
+      <Text>{props.children}</Text>
     </Container>
   )
 }
