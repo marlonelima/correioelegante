@@ -17,7 +17,7 @@ export const Header = styled.View`
 `
 
 export const Image = styled.Image`
-  width: 100%;
+  width: 80%;
   height: undefined;
   aspect-ratio: 1;
 `
@@ -30,7 +30,11 @@ export const Welcome = styled.View`
   border-radius: 30px;
   display: flex;
   align-items: center;
-  padding-top: 30%;
+`
+
+export const ThreeDots = styled.Image`
+  margin-top: 20px;
+  margin-bottom: 22%;
 `
 
 export const MainText = styled.Text`
@@ -43,6 +47,7 @@ export const MainText = styled.Text`
   color: ${theme.gray.main};
   font-family: 'PoppinsBold';
   padding-top: 20px;
+  margin-top: 22%;
 `
 
 export const SecondaryText = styled.Text`
