@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import { Container, Text } from './styles'
+import { Container, Text } from './styles';
 
 interface IProps {
-  children: string
-  onPress: any
+  children: string;
+  onPress: any;
 }
 
 const Button = (props: IProps) => {
@@ -12,7 +12,7 @@ const Button = (props: IProps) => {
     <Container onPress={props.onPress}>
       <Text>{props.children}</Text>
     </Container>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

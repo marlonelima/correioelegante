@@ -9,7 +9,8 @@ npm-debug.*
 *.orig.*
 web-build/
 
-./*.log
+*.log
+*.lock
 
 # macOS
 .DS_Store
